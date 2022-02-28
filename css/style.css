@@ -29,7 +29,7 @@ section h1 span{
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000;
+    z-index: 10;
     position: sticky;
 
 }
@@ -37,10 +37,20 @@ section h1 span{
     color: yellow;
     margin-right: 10px;
 }
+#fechar{
+    text-align: right;
+}
+#fechar i{
+    font-size: 2.2em;
+    color: #444;
+}
 .header .logo{
+    display: flex;
+}
+.header .logo a{
     font-size: 1.7em;
     font-weight: 700;
-    color: #fff
+    color: #fff;
 }
 .formulario{
     width: 500px;
@@ -61,15 +71,64 @@ section h1 span{
     cursor: pointer;
     font-size: 1.12em;
 }
+#search-icon{
+    display: none;
+}
 .menu a{
     margin-left: 30px;
     color: #fff;
     font-size: 1.7em;
 }
+#menu-btn{
+    cursor: pointer;
+}
+aside{
+    width: 300px;
+    height: 100%;
+    position: fixed;
+    left: -110%;
+    top: 0;
+    background-color: rgb(223, 223, 223);
+    z-index: 100;
+    padding: 20px;
+}
+aside.active{
+    left: 0;
+}
+aside header{
+    text-align: center;
+}
+aside header a{
+    font-size: 1.2em;
+    color: rgb(0, 0, 0);
+}
+aside header a:hover{
+    color: #0984e3;
+}
+aside header img{
+    height: 200px;
+    text-align: center;
+    border-radius: 50%;
+    border: 5px solid #fff;
+}
+aside nav a{
+    display: block;
+    color: rgb(66, 66, 66);
+    font-size: 1.2em;
+    margin: 15px 0;
+}
+aside nav a i{
+    margin-right: 10px;
+}
+aside nav a:hover i{
+    margin-right: 25px;
+    color: #0984e3;
+}
 .one{
     background-color: #fff;
 }
-.container{
+.one .container{
+    height: 490px;
     position: relative;
     overflow: hidden;
 }
@@ -87,6 +146,8 @@ section h1 span{
     min-height: 400px;
     height: 100%;
     width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .slider .imagem{
     flex: 1 1 420px;
@@ -162,17 +223,16 @@ section h1 span{
 }
 .three .container{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(20.6em, 1fr));
     gap: 20px;
 }
 .three .container .container-itens{
     border: 2px solid #333;
     border-radius: 5px;
     display: flex;
-    padding: 20px;
+    padding: 20px 10px;
     align-items: center;
     background-color: #fff;
-    gap: 10px;
 }
 .three .container .container-itens img{
     height: 150px;
@@ -521,4 +581,92 @@ section h1 span{
     display: inline-block;
     border-radius: 5px;
     margin-top: 10px;
+}
+@media (max-width: 1200px){
+    header form{
+        width: 50% !important;
+    }
+    html{
+        font-size: 90%;
+    }
+}
+@media (max-width: 1060px){
+    header form{
+        width: 45% !important;
+    }
+    html{
+        font-size: 95%;
+    }
+}
+@media (max-width: 960px) {
+    header form{
+        width: 40% !important;
+    }
+
+    .footer .container{
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 400px;
+    }
+    .footer .container .menu-item{
+        text-align: center;
+    }
+    .footer .container .menu-item a{
+        margin-top: 20px;
+    }
+    .footer .container .menu-item a{
+        display: block;
+    }
+}
+@media (max-width: 865px){
+    header form{
+        width: 35% !important;
+    }
+}
+@media (max-width: 770px) {
+    header form{
+      position: absolute; 
+      top: -110%;
+      right: 20px;
+      width: 50% !important;
+      border-radius: 15px;
+      border: 1px solid #333;
+    }
+
+    header form input{
+        border-top: 1px solid #333;
+        border-bottom: 1px solid #333;
+    }
+    header .active{
+        top: 105%
+    }
+    #search-icon{
+        display: inline;
+    }
+    .menu a{
+        margin-left: 15px;
+    }
+    html{
+        font-size: 0.9em;
+    }
+}
+@media (max-width: 650px){
+    html{
+        font-size: 0.8em;
+    }
+}
+@media (max-width: 450px) {
+    .search-form{
+        height: 40px;
+    }
+    #search-box{
+        height: 40px;
+    }
+    .menu a{
+        margin-left: 10px;
+    }
+    html{
+        font-size: 0.7em;
+    }
 }
